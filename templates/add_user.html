@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add User</title>
+    <style>
+        body { font-family: Arial; max-width: 400px; margin: 50px auto; }
+        input { display:block; width:100%; padding:8px; margin:8px 0; }
+        button { padding:10px 20px; background:#05993b; color:#fff; border:none; }
+    </style>
+</head>
+<body>
+    <h2>Add New User</h2>
+    <form action="/add" method="POST">
+        <input type="text"   name="name"  placeholder="Name"  required>
+        <input type="email"  name="email" placeholder="Email" required>
+        <input type="number" name="age"   placeholder="Age"   required>
+        <button type="submit">Save</button>
+    </form>
+    <p><a href="/">← Back to list</a></p>
+</body>
+</html>

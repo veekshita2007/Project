@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <style>
+        body { font-family: Arial; max-width: 700px; margin: 40px auto; }
+        table { width:100%; border-collapse: collapse; margin-top:20px; }
+        th, td { border:1px solid #ccc; padding:10px; text-align:left; }
+        th { background:#05993b; color:#fff; }
+        tr:nth-child(even) { background:#f4f4f4; }
+        .btn { background:#05993b; color:#fff; padding:8px 16px;
+               text-decoration:none; border-radius:6px; }
+    </style>
+</head>
+<body>
+    <h2>All Users ({{ users|length }})</h2>
+    <a href="/add" class="btn">+ Add User</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th><th>Name</th><th>Email</th><th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {# Jinja2 loop over the list of rows #}
+            {% for u in users %}
+            <tr>
+                <td>{{ u['id'] }}</td>
+                <td>{{ u['name'] }}</td>
+                <td>{{ u['email'] }}</td>
+                <td>{{ u['age'] }}</td>
+            </tr>
+            {% else %}
+            <!-- runs if the list is empty -->
+            <tr><td colspan="4">No users found.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
